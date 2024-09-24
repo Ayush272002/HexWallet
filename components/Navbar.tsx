@@ -8,7 +8,7 @@ const Navbar = () => {
         <Wallet className="size-8" />
         <div className="flex flex-col gap-4">
           <span className="tracking-tighter text-3xl font-bold text-primary flex gap-2 items-center">
-            Web Wallet{' '}
+            HexWallet{' '}
           </span>
         </div>
       </div>

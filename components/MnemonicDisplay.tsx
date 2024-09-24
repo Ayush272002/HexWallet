@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { ChevronDown, ChevronUp, Copy } from 'lucide-react';
 
-interface MemonicDisplayProps {
-  showMemonic: boolean;
-  setShowMemonic: (value: boolean) => void;
-  memonicWords: string[];
+interface MnemonicDisplayProps {
+  showMnemonic: boolean;
+  setShowMnemonic: (value: boolean) => void;
+  mnemonicWords: string[];
   copyToClipboard: (content: string) => void;
 }
 
-const MemonicDisplay = ({
-  showMemonic,
-  setShowMemonic,
-  memonicWords,
+const MnemonicDisplay = ({
+  showMnemonic,
+  setShowMnemonic,
+  mnemonicWords,
   copyToClipboard,
-}: MemonicDisplayProps) => {
+}: MnemonicDisplayProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -27,13 +27,13 @@ const MemonicDisplay = ({
     >
       <div
         className="flex w-full justify-between items-center"
-        onClick={() => setShowMemonic(!showMemonic)}
+        onClick={() => setShowMnemonic(!showMnemonic)}
       >
         <h2 className="text-2xl md:text-3xl font-bold tracking-tighter">
           Your Secret Phrase
         </h2>
-        <Button onClick={() => setShowMemonic(!showMemonic)} variant="ghost">
-          {showMemonic ? (
+        <Button onClick={() => setShowMnemonic(!showMnemonic)} variant="ghost">
+          {showMnemonic ? (
             <ChevronUp className="size-4" />
           ) : (
             <ChevronDown className="size-4" />
@@ -41,7 +41,7 @@ const MemonicDisplay = ({
         </Button>
       </div>
 
-      {showMemonic && (
+      {showMnemonic && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const MemonicDisplay = ({
             ease: 'easeInOut',
           }}
           className="flex flex-col w-full items-center justify-center"
-          onClick={() => copyToClipboard(memonicWords.join(' '))}
+          onClick={() => copyToClipboard(mnemonicWords.join(' '))}
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -61,7 +61,7 @@ const MemonicDisplay = ({
             }}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 justify-center w-full items-center mx-auto my-8"
           >
-            {memonicWords.map((word, index) => (
+            {mnemonicWords.map((word, index) => (
               <p
                 className="md:text-lg bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 rounded-lg p-4"
                 key={index}
@@ -78,4 +78,4 @@ const MemonicDisplay = ({
   );
 };
 
-export default MemonicDisplay;
+export default MnemonicDisplay;

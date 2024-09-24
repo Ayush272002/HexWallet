@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import { Wallet } from 'lucide-react';
+import Wallet from '@/components/Wallet';
 
 export default function Home() {
   return (

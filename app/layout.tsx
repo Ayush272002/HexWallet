@@ -17,8 +17,15 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Web Wallet',
+  title: 'HexWallet',
   description: 'Your Personal Web3 Wallet.',
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/favicon.svg',
+    },
+  ],
 };
 
 export default function RootLayout({

@@ -17,6 +17,12 @@ Check out the live preview of the app: [HexWallet](https://hex-wallet.vercel.app
 - ethers
 - husky
 
+## Preview
+
+<p align="center">
+  <img src="public/preview.gif" />
+</p>
+
 ## Running the project locally
 
 ```bash
